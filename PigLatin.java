@@ -8,8 +8,9 @@ public class PigLatin {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Please enter a word or phrase to be translated: \nPunctuation, numbers, special characters cannot be used.");
 		Scanner pl = new Scanner(System.in);
+		
+		System.out.println("Please enter a word or phrase to be translated: \nPunctuation, numbers, special characters cannot be used.");
 
 		String phrase = pl.nextLine();
 			
@@ -24,7 +25,7 @@ public class PigLatin {
 	public static String convert(String phrase) {
 				
 		String vowels = "aeiouAEIOU";
-		String[] letters = phrase.split("[ ]");
+		String[] letters = phrase.split(" +");
 		StringBuilder newWord = new StringBuilder();
 		Pattern p = Pattern.compile("[a-z ]*", Pattern.CASE_INSENSITIVE);
 		Matcher m = p.matcher(phrase);
